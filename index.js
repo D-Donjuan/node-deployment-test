@@ -3,6 +3,10 @@ const dotenv = require('dotenv');
 
 dotenv.config({path: './config/config.env'});
 
+if(process.env.NODE_ENV === 'development'){
+    app.use(morgan('dev'));
+}
+
 const app = express();
 
 const PORT = process.env.PORT || 5000;
